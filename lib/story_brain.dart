@@ -2,6 +2,7 @@
 import 'story.dart';
 
 class StoryBrain{
+  int index=0;
 List<Story> _storyData = [
  Story(
      storyTitle:
@@ -40,10 +41,14 @@ List<Story> _storyData = [
 
 //TODO: Step 23 - Use the storyNumber property inside getStory(), getChoice1() and getChoice2() so that it gets the updated story and choices rather than always just the first (0th) one.
 
-//TODO: Step 8 - Create a method called getStory() that returns the first storyTitle from _storyData.
-// String getStory(){
-//   return StoryBrain._storyData.storyTitle[0];
-// }
+
+
+String getStoryTitle(List<Story> storyData, int storyIndex) {
+  return storyData[storyIndex].storyTitle;
+}
+// And you can call this method by passing _storyData
+// String firstStoryTitle = getStoryTitle(_storyData,0);
+
 
 
 //TODO: Step 11 - Create a method called getChoice1() that returns the text for the first choice1 from _storyData.
