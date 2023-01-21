@@ -20,7 +20,7 @@ class StoryPage extends StatefulWidget {
 }
 
 class _StoryPageState extends State<StoryPage> {
-  int storyIndex = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class _StoryPageState extends State<StoryPage> {
                 flex: 12,
                 child: Center(
                   child: Text(
-                    storyBrain.getStory(storyIndex),
+                    storyBrain.getStory(),
                     style: TextStyle(
                       fontSize: 25.0,
                     ),
@@ -53,14 +53,18 @@ class _StoryPageState extends State<StoryPage> {
                 flex: 2,
                 child: ElevatedButton(
                   onPressed: () {
+                    print("Choice 1 got pressed");
                     //Choice 1 made by user.
-                    storyBrain.nextStory(1);
+                    setState(() {
+                      storyBrain.nextStory(1);
+                    });
+                    
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.red),
                   ),
                   child: Text(
-                    storyBrain.getChoice1(storyIndex),
+                    storyBrain.getChoice1(),
                     style: TextStyle(
                       fontSize: 20.0,
                     ),
@@ -84,7 +88,7 @@ class _StoryPageState extends State<StoryPage> {
                     backgroundColor: MaterialStateProperty.all(Colors.blue),
                   ),
                   child: Text(
-                    storyBrain.getChoice2(storyIndex),
+                    storyBrain.getChoice2(),
                     style: TextStyle(
                       fontSize: 20.0,
                     ),
