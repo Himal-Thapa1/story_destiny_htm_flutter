@@ -2,7 +2,7 @@
 import 'story.dart';
 
 class StoryBrain{
-  int index=0;
+
 List<Story> _storyData = [
  Story(
      storyTitle:
@@ -34,6 +34,21 @@ List<Story> _storyData = [
      choice1: 'Restart',
      choice2: '')
 ];
+String getStory(int storyIndex) {
+  return _storyData[storyIndex].storyTitle;
+}
+
+String getChoice1(int storyIndex){
+  return _storyData[storyIndex].choice1;
+}
+String getChoice2 (int storyIndex){
+  return _storyData[storyIndex].choice2;
+}
+int storyNumber=0;
+
+void nextStory(int choiceNumber){
+
+}
 }
 
 
@@ -43,25 +58,17 @@ List<Story> _storyData = [
 
 
 
-String getStoryTitle(List<Story> storyData, int storyIndex) {
-  return storyData[storyIndex].storyTitle;
-}
-// And you can call this method by passing _storyData
-// String firstStoryTitle = getStoryTitle(_storyData,0);
 
 
 
-//TODO: Step 11 - Create a method called getChoice1() that returns the text for the first choice1 from _storyData.
 
-//TODO: Step 12 - Create a method called getChoice2() that returns the text for the first choice2 from _storyData.
 
 //TODO: Step 25 - Change the storyNumber property into a private property so that only story_brain.dart has access to it. You can do this by right clicking on the name (storyNumber) and selecting Refactor -> Rename to make the change across all the places where it's used.
 
-//TODO: Step 16 - Create a property called storyNumber which starts with a value of 0. This will be used to track which story the user is currently viewing.
 
-//TODO: Step 17 - Create a method called nextStory(), it should not have any outputs but it should have 1 input called choiceNumber which will be the choice number (int) made by the user.
 
-//TODO: Step 20 - Download the story plan here: https://drive.google.com/uc?export=download&id=1KU6EghkO9Hf2hRM0756xFHgNaZyGCou3
+
+
 
 //TODO: Step 21 - Using the story plan, update nextStory() to change the storyNumber depending on the choice made by the user. e.g. if choiceNumber was equal to 1 and the storyNumber is 0, the storyNumber should become 2.
 
