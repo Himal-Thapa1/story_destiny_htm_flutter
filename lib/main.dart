@@ -81,8 +81,10 @@ class _StoryPageState extends State<StoryPage> {
                 child: ElevatedButton(
                   onPressed: () {
                     //Choice 2 made by user.
-
-                    storyBrain.nextStory(2);
+                    setState(() {
+                      storyBrain.nextStory(2);
+                    });
+                    
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.blue),
@@ -103,6 +105,6 @@ class _StoryPageState extends State<StoryPage> {
   }
 }
 
-//TODO: Step 24 - Run the app and try to figure out what code you need to add to this file to make the story change when you press on the choice buttons.
+// TODO: Step 24 - Run the app and try to figure out what code you need toadd to this file to make the story change when you press on the choice buttons.
 
 //TODO: Step 29 - Run the app and test it against the Story Outline to make sure you've completed all the steps. The code for the completed app can be found here: https://github.com/londonappbrewery/destini-challenge-completed/
